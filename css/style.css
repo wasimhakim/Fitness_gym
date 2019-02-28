@@ -1,0 +1,513 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    scroll-behavior: smooth;
+    font-family: 'Baumans', consolas, cursive;
+}
+
+* {
+    margin: 0;
+}
+
+.menu-button {
+    position: fixed;
+    top: 2%;
+    right: 3%;
+    color: #214550;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.goToTop {
+    position: fixed;
+    right: -3%;
+    bottom: 2%;
+    background: #214550;
+    padding: 5px 10px;
+    color: #90b0bb;
+    z-index: 2;
+}
+
+.menu-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    max-height: 100%;
+    background: #214550;
+    color: white;
+    overflow-x: hidden;
+    z-index: 1;
+}
+
+.links h3 {
+    margin: 0px 20px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.links .close {
+    float: right;
+    cursor: pointer;
+}
+
+.links p {
+    cursor: pointer;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    display: block;
+    
+}
+
+.links p i {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.links p:hover {
+    background: #152d35;
+}
+
+.active {
+    background: #152d35;
+}
+
+.heading-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.heading-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('../images/front-img.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    animation: animate 20s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.7);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.heading-info {
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    width: 100%;
+    transform: translate(-50%, -30%);
+    text-align: center;
+}
+
+.heading-info h1 {
+    position: relative;
+    left: -60%;
+    text-transform: uppercase;
+    font-size: 50px;
+    letter-spacing: 20px;
+    color: #1e424d;
+    margin-bottom: 5px;
+}
+
+.heading-info p {
+    position: relative;
+    left: -50%;
+    color: #214550;
+}
+
+.heading-info a {
+    position: relative;
+    top: 400px;
+    text-decoration: none;
+    color: #214550;
+    border: 1px solid;
+    padding: 7px 20px;
+    transition: all .5s;
+}
+
+.heading-info a i {
+    margin-left: 7px;
+}
+
+.heading-info a::before {
+    content: "";
+    z-index: -1;
+    background:#214550;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 0;
+    height: 100%;
+    transition: .3s;
+}
+
+.heading-info a:hover::before {
+    width: 100%;
+}
+
+.heading-info a:hover {
+    color: #90b0bb;
+}
+
+.services {
+    border-top: 8px solid #214550;
+    padding-top: 20px;
+}
+
+.services .service-head {
+    font-size: 45px;
+    margin: 0px 50px 20px 50px;
+    color: #214550;
+    text-align: center;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+}
+
+.yoga, .fitness, .gym, .wall-climbing {
+    margin: 40px 0px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+.yoga .yoga-img {
+    position: relative;
+    left: -90%;
+    background-image: url(../images/yoga.jpg);
+    background-size: cover;
+}
+
+.yoga .yoga-info {
+    margin: 10% 3%;
+}
+
+.yoga .yoga-info p {
+    position: relative;
+    right: -120%;
+    text-align: justify;
+}
+
+.yoga .yoga-info h2 {
+    position: relative;
+    right: -120%;
+    text-transform: uppercase; 
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #214550;
+}
+
+.fitness .fitness-info {
+    text-align: right;
+    margin: 10% 3%;
+}
+
+.fitness .fitness-info h2 {
+    position: relative;
+    left: -120%;
+    text-transform: uppercase; 
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #214550;
+}
+
+.fitness .fitness-info p {
+    position: relative;
+    left: -120%;
+    text-align: justify;
+}
+
+.fitness .fitness-img {
+    position: relative;
+    right: -90%;
+    background-image: url(../images/fitness.jpg);
+    background-size: cover;
+}
+
+.gym .gym-img {
+    position: relative;
+    left: -90%;
+    background-image: url(../images/gym.jpg);
+    background-size: cover;
+}
+
+.gym .gym-info {
+    text-align: left;
+    margin: 10% 3%;
+}
+
+.gym .gym-info h2 {
+    position: relative;
+    right: -120%;
+    text-transform: uppercase; 
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #214550;
+}
+
+.gym .gym-info p {
+    position: relative;
+    right: -120%;
+    text-align: justify;
+}
+
+.wall-climbing .wall-climbing-info {
+    text-align: right;
+    margin: 10% 3%;
+}
+
+.wall-climbing .wall-climbing-info h2 {
+    text-transform: uppercase; 
+    position: relative;
+    left: -120%;
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #214550;
+}
+
+.wall-climbing .wall-climbing-info p {
+    position: relative;
+    left: -120%;
+    text-align: justify;
+}
+
+.wall-climbing .wall-climbing-img {
+    position: relative;
+    right: -90%;
+    background-image: url(../images/wall-climbing.jpg);
+    background-size: cover;
+}
+
+.pricing {
+    margin: 10px 180px;
+    margin-bottom: 20px;
+}
+
+.pricing .pricing-head {
+    font-size: 45px;
+    margin: 0px 50px 30px 50px;
+    color: #214550;
+    text-align: center;
+}
+
+.package:hover {
+    box-shadow: 1px 1px 20px 5px #c5c5c5;
+}
+
+.package {
+    flex: 33.3%;
+    margin-right: 40px;
+    background: #f0f0f0;
+    transition: box-shadow .3s;
+}
+
+.gold {
+    transform: scale(1.1);
+}
+
+.package .list {
+    list-style-type: none;
+    padding: 0;
+    border: 1px solid #cacaca;
+}
+
+.package .list li {
+    padding: 15px 25px;
+    border-bottom: 1px solid #cacaca;
+    text-align: center;
+}
+
+.package .list li .fa-check {
+    color: green;
+}
+
+.package .list li .fa-times {
+    color: rgb(197, 0, 0);
+}
+
+.package .list .list-head {
+    background: #214550;
+    color: #d1e1e7;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+.package .list .list-price {
+    background: #A25D52;
+    color: #d1e1e7;
+}
+
+.package .list .buy {
+    background: #C8B27E;
+}
+
+.package .list .buy button {
+    padding: 7px 25px;
+    border: none;
+    background: #A25D52;
+    color: #d1e1e7;
+    outline: none;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.package .list .buy button:hover {
+    box-shadow: 0px 3px 20px 2px gray;
+}
+
+.gallery {
+    margin: 40px 200px;
+    height: 600px;
+    overflow: hidden;
+}
+
+.gallery .gallery-head {
+    font-size: 45px;
+    color: #214550;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.gallery .gallery-images::before {
+    content: "";
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 540px;
+    box-shadow: 0px 0px 20px 6px #dadada;
+}
+
+.gallery .gallery-images {
+    position: relative;
+    background-image: url(../images/gallery/1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 100% 90%;
+    width: 100%;
+    height: 540px;
+    animation: gallery 50s linear infinite;
+}
+
+@keyframes gallery {
+    0% {
+        background-image: url(../images/gallery/1.jpg);
+    }
+    14.2% {
+        background-image: url(../images/gallery/2.jpg);
+    }
+    28.4% {
+        background-image: url(../images/gallery/3.jpg);
+    }
+    42.6% {
+        background-image: url(../images/gallery/4.jpg);
+    }
+    56.8% {
+        background-image: url(../images/gallery/5.jpg);
+    }
+    71% {
+        background-image: url(../images/gallery/6.jpg);
+    }
+    85.2% {
+        background-image: url(../images/gallery/7.jpg);
+    }
+    100% {
+        background-image: url(../images/gallery/1.jpg);
+    }
+}
+
+.contact {
+    width: 100%;
+}
+
+.contact .contact-head {
+    text-align: center;
+    font-size: 45px;
+    color: #214550;
+    margin-bottom: 30px;
+}
+
+.contact .form {    
+    margin-bottom: 15px;
+}
+
+.contact-info {
+    background: #f0f0f0;
+    padding: 10px 200px;
+}
+
+.contact .contact-info .form input {
+    width: 90%;
+    margin: 15px 10px;
+    border: 2px solid #214550;
+    background: none;
+    padding: 15px;
+    outline: none;
+}
+
+.contact .contact-info .form input[type=submit] {
+    width: 97%;
+    border: none;
+    background: #214550;
+    color: #90b0bb;
+    cursor: pointer;
+}
+
+.contact .contact-info .form textarea {
+    width: 90%;
+    margin: 15px 10px;
+    border: 2px solid #214550;
+    background: none;
+    padding: 15px;
+    outline: none;
+}
+
+.contact .contact-info .address {
+    text-align: center;
+    margin-top: 90px;
+    position: relative;
+    left: 10%;
+}
+
+.contact .contact-info .address i {
+    font-size: 80px;
+    margin-bottom: 20px;
+    color: #214550;
+}
+
+.contact .contact-info .address p {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.footer {
+    padding: 10px 0px;
+    text-align: center;
+    color: #90b0bb;
+    background: #214550;
+}
